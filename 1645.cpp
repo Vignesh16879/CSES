@@ -9,17 +9,20 @@ int main()
 {
     ll n;
     cin >> n;
-    vector<ll> arr;
- 
+    stack<pair<ll, ll>> st;
+    st.push({0, 0});
+
     for(ll i = 0; i < n; i++)
     {
         ll a;
         cin >> a;
-        arr.push_back(a);
-        vector<ll>::iterator upper1;
-        upper1 = upper_bound(arr.begin(), arr.end(), arr[i]);
-        cout << (upper1 - arr.begin()) << " ";
-    }
+
+        while(!st.empty() && st.top().first >= a)
+            st.pop();
+
+        cout << st.top().second << " ";
+        st.push({a, i+1});
+    }   
   
     cout << "\n";
     

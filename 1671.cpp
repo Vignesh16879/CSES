@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
- 
 #define ll long long
- 
 using namespace std;
  
 ll n, m, d[100000], vis[100000], dis[100000];
@@ -34,7 +32,7 @@ void dij()
     }    
 }
  
-void in()
+void sd()
 {
     cin >> n >> m;
  
@@ -44,10 +42,7 @@ void in()
 		cin >> a >> b >> c;
 		par[a].push_back({b, c});
 	}
-}
- 
-void out()
-{
+
     dij();
  
     for(ll i = 1; i < n+1; i++)
@@ -56,8 +51,7 @@ void out()
  
 int main()
 {
-    in();
-    out();
+    sd();
  
     cout << "\n";
  
